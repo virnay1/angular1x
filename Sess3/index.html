@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+  <head>
+    <title>AngularJS Demo 2</title>  
+  </head>  
+  <body>
+    <h2>Displaying a List of Items</h2>  
+    <div ng-app="app1">
+      <div ng-controller="HomeController">
+       <h3>Product List</h3>
+       <ul>
+         <li ng-repeat="product in products">
+           <div>
+             Id : {{product.id}}
+             Name : {{product.name}}
+             Price : {{product.price}}
+           </div>
+         </li>
+       </ul>      
+      </div>
+    </div>
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>  
+  </body>
+</html>
