@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+  <head>
+    <title>AngularJS Demo 2 - part 3</title>  
+  </head>  
+  <body>
+    <h2>Product List</h2>  
+    <div ng-app="app1">
+      <div ng-controller="HomeController">
+       <h3>Product List</h3>
+       <p>
+         Product Name : <input type="text" ng-model="query"/>
+       </p>
+       <ul>
+         <li ng-repeat="product in products | filter:query">
+           <div>
+             Id : {{product.id}}
+             Name : {{product.name}}
+             Price : {{product.price | currency}}
+             <button ng-click="deleteProduct(product.id)">Delete</button>
+           </div>
+         </li>
+       </ul>      
+       <div>
+         <h3>Enter details of new Product</h3>
+         <p>ID : <input type="text" ng-model="productID"/>
+         </p>
+         <p>
+           Name : <input type="text" ng-model="productName"/>
+         </p>
+         <p>
+           Price : <input type="text" ng-model="productPrice"/>
+         </p>
+         <button ng-click= "addProduct()">Save</button>
+       </div>
+      </div>
+    </div>
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>  
+  </body>
+</html>
